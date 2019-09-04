@@ -1,0 +1,16 @@
+Sigma2SplunkApp:
+    git_path: '/home/user/git'
+    splunk_path: '/opt/splunk'
+    whitelist_app: 'sigma_whitelist'
+Sigma2SplunkAlert:
+    standard_config: 'config.yml'
+    whitelist_config: 'config_whitelist.yml'
+sigma:
+    sigma_config: 'splunk-all.yml'
+    sigma_rules:
+        - '/rules/windows/process_creation/win_encoded_iex.yml'
+        - '/rules/windows/sysmon/*'
+    sigma_rules_whitelist:
+        - 'sysmon_ads_executable.yml'
+        - 'sysmon_cactustorch.yml'
+        - 'sysmon_cobaltstrike_process_injection.yml'
