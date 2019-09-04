@@ -23,7 +23,8 @@ It is needed that you clone the Sigma and Sigma2SplunkAlert repositories to a ce
 
 ## Example
 config.yml
-```Sigma2SplunkApp:
+```
+Sigma2SplunkApp:
     git_path: '/home/user/git'
     splunk_path: '/opt/splunk'
     whitelist_app: 'sigma_whitelist'
