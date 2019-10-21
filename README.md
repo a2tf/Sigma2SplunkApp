@@ -13,7 +13,7 @@ It is needed that you clone the Sigma and Sigma2SplunkAlert repositories to a ce
 1. Prepare your config to launch sigma2splunkapp:  
  a) create your specific Sigma2SplunkAlert config and reference it in the config.yml with it's name  
  b) create your specific Sigma2SplunkAlert whitelisting config and reference it in the config.yml with it's name  
- c) define which sigma rules should be used to create your savedsearches.conf  
+ c) define which sigma rules should be used and which should be skipped to create your savedsearches.conf  
  d) define which sigma rules should be created with a whitelist  
  e) define your global settings (e.g. where is your git path, where is splunk located, what is the name of whitelisting app)  
  f) execute  
@@ -40,6 +40,8 @@ sigma:
         - 'sysmon_ads_executable.yml'
         - 'sysmon_cactustorch.yml'
         - 'sysmon_cobaltstrike_process_injection.yml'
+    sigma_rules_skipping:
+        - 'sysmon_dns_serverlevelplugindll.yml'
 ```
 
 Now running:
