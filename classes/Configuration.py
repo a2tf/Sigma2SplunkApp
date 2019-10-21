@@ -38,3 +38,10 @@ class Configuration:
             self.sigma_rules = config["sigma"]["sigma_rules"]
         if "sigma_rules_whitelist" in config["sigma"]:
             self.sigma_rules_whitelist = config["sigma"]["sigma_rules_whitelist"]
+        if "sigma_rules_skipping" in config["sigma"]:
+            self.sigma_rules_skipping = config["sigma"]["sigma_rules_skipping"]
+        else:
+            self.sigma_rules_skipping = []
+        
+        
+            

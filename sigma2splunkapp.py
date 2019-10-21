@@ -33,7 +33,10 @@ def main():
         sigma_rules_path = config.git_path + "/sigma/" + sigma_object
         sigma_path = glob.glob(sigma_rules_path)
         for sigma_rule in sigma_path:
-            
+            # 1st check if to skip whole rule
+            if os.path.basename(sigma_rule) in config.sigma_rules_skipping:
+                print("Skipping Rule: " +sigma_rule)
+                continue
             param_c = "-c " + config.git_path + "/Sigma2SplunkAlert/config/" + config.S2SA_standard_config
             # Iterate over Whitelist
             for w in config.sigma_rules_whitelist:

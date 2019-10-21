@@ -14,3 +14,5 @@ sigma:
         - 'sysmon_ads_executable.yml'
         - 'sysmon_cactustorch.yml'
         - 'sysmon_cobaltstrike_process_injection.yml'
+   sigma_rules_skipping:
+        - '/rules/windows/sysmon/sysmon_dns_serverlevelplugindll.yml'
